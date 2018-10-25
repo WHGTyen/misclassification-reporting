@@ -15,13 +15,13 @@ class Row {
     }
 }
 
-function pickRandomLetter() {
+function pickRandomLetter(): string {
     let letterIndex = Math.floor(Math.random() * 26)
 
     return "abcdefghijklmnopqrstuvwxyz".charAt(letterIndex)
 }
 
-function generateWord(maxWordLength = 10) {
+function generateWord(maxWordLength = 10): string {
     let word = ""
     let wordLength = Math.floor(Math.random() * maxWordLength)
     
@@ -33,7 +33,7 @@ function generateWord(maxWordLength = 10) {
     return word
 }
 
-function generateMessage(minMessageLength = 3, maxMessageLength = 20) {
+function generateMessage(minMessageLength = 3, maxMessageLength = 20): string {
     let message = []
     let messageLength = Math.floor(Math.random() * (maxMessageLength - minMessageLength)) + minMessageLength
 
@@ -45,15 +45,8 @@ function generateMessage(minMessageLength = 3, maxMessageLength = 20) {
     return message.join(" ")
 }
 
-function pickRandomLabel(possibleLabels: string[]) {
+function pickRandomLabel(possibleLabels: string[]): string {
     let labelIndex = Math.floor(Math.random() * possibleLabels.length)
 
     return possibleLabels[labelIndex]
 }
-
-function generateDataset(numberOfMessages: number, possibleLabels: string[]) {
-    for (let messageIndex = 0; messageIndex < messageIndex; messageIndex++) {
-        
-    }
-}
-
