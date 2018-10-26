@@ -18,33 +18,34 @@ for (let number = 0; number < numberOfMessages; number++) {
     labelColumn.appendChild(labelText)
 
     // <th id="tick">
-    //     <input type="radio" name="verification" value="yes">Yes
+    //     <input type="radio" name="verification0" value="yes">Yes
     // </th>
     let tickColumn = document.createElement("th")
     tickColumn.setAttribute("id", "tick")
     let tickRadio = document.createElement("input")
     tickRadio.setAttribute("type", "radio")
-    tickRadio.setAttribute("name", "verification")
+    tickRadio.setAttribute("name", "verification" + number)
     tickRadio.setAttribute("value", "yes")
     tickColumn.appendChild(tickRadio)
     let tickText = document.createTextNode("Yes")
     tickColumn.appendChild(tickText)
 
     // <th id="comment">
-    //     <input type="radio" name="verification" value="no">No, because: <input type="text" name="comment">
+    //     <input type="radio" name="verification0" value="no"> No, because: 
+    //     <input type="text" name="comment0">
     // </th>
     let commentColumn = document.createElement("th")
     commentColumn.setAttribute("id", "comment")
     let commentRadio = document.createElement("input")
     commentRadio.setAttribute("type", "radio")
-    commentRadio.setAttribute("name", "verification")
+    commentRadio.setAttribute("name", "verification" + number)
     commentRadio.setAttribute("value", "no")
     commentColumn.appendChild(commentRadio)
     let commentText = document.createTextNode("No, because: ")
     commentColumn.appendChild(commentText)
     let commentInput = document.createElement("input")
     commentInput.setAttribute("type", "text")
-    commentInput.setAttribute("name", "comment")
+    commentInput.setAttribute("name", "comment" + number)
     commentColumn.appendChild(commentInput)
 
     let row = document.createElement("tr")
