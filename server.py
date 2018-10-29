@@ -8,5 +8,8 @@ def serve_index():
 @app.route('/post_data', methods=['POST'])
 def get_request():
     print(request.get_json())
-
+    response = Response("response")
+    response.headers['Access-Control-Allow-Origin'] = "*"
+    return response
+    
 app.run(port=8080)
