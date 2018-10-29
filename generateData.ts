@@ -16,14 +16,15 @@ class Row {
 }
 
 function pickRandomLetter(): string {
-    let letterIndex = Math.floor(Math.random() * 26)
+    let alphabet = "abcdefghijklmnopqrstuvwxyz"
+    let letterIndex = Math.floor(Math.random() * alphabet.length)
 
-    return "abcdefghijklmnopqrstuvwxyz".charAt(letterIndex)
+    return alphabet[letterIndex]
 }
 
-function generateWord(maxWordLength = 10): string {
+function generateWord(minWordLength = 2, maxWordLength = 10): string {
     let word = ""
-    let wordLength = Math.floor(Math.random() * maxWordLength)
+    let wordLength = Math.floor(Math.random() * (maxWordLength - minWordLength)) + minWordLength
     
     for (let number = 0; number < wordLength; number++) {
         let randomLetter = pickRandomLetter()
@@ -33,9 +34,9 @@ function generateWord(maxWordLength = 10): string {
     return word
 }
 
-function generateMessage(minMessageLength = 3, maxMessageLength = 20): string {
+function generateMessage(minWordCount = 3, maxWordCount = 20): string {
     let message = []
-    let messageLength = Math.floor(Math.random() * (maxMessageLength - minMessageLength)) + minMessageLength
+    let messageLength = Math.floor(Math.random() * (maxWordCount - minWordCount)) + minWordCount
 
     for (let number = 0; number < messageLength; number++) {
         let randomWord = generateWord()
@@ -45,8 +46,8 @@ function generateMessage(minMessageLength = 3, maxMessageLength = 20): string {
     return message.join(" ")
 }
 
-function pickRandomLabel(possibleLabels: string[]): string {
-    let labelIndex = Math.floor(Math.random() * possibleLabels.length)
+function pickRandomFromList(possibleItems: any[]): any {
+    let itemIndex = Math.floor(Math.random() * possibleItems.length)
 
-    return possibleLabels[labelIndex]
+    return possibleItems[itemIndex]
 }
