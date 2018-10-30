@@ -44,7 +44,7 @@ for (let number = 0; number < numberOfMessages; number++) {
     //     Related or Unrelated
     // </th>
     let labelColumn = createColumn("label")
-    addText(labelColumn, pickRandomLabel(["Related", "Unrelated"]))
+    addText(labelColumn, pickRandomFromList(["Related", "Unrelated"]))
 
     // <th id="tick">
     //     <input type="radio" name="verification" value="yes">Yes
