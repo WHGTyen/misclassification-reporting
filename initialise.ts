@@ -18,10 +18,10 @@ function addText(element: HTMLElement, text: string) {
     element.appendChild(textNode)
 }
 
-function addRadioButton(element: HTMLElement, text: string, name: string) {
+function addRadioButton(element: HTMLElement, value: string, name: string) {
     let radioButton = document.createElement("input")
     radioButton.setAttribute("type", "radio")
-    radioButton.setAttribute("value", text)
+    radioButton.setAttribute("value", value)
     radioButton.setAttribute("name", name)
     element.appendChild(radioButton)
 }
