@@ -5,6 +5,8 @@ function addRow(table: HTMLElement, columns: HTMLElement[]) {
     for (let column of columns) {
         row.appendChild(column)
     }
+
+    table.appendChild(row)
 }
 
 function createColumn(id: string): HTMLElement {
