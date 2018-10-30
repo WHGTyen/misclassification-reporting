@@ -1,4 +1,4 @@
-const numberOfMessages = 2
+const numberOfMessages = 100
 
 function addRow(table: HTMLElement, columns: HTMLElement[]) {
     let row = document.createElement("tr")
