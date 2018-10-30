@@ -34,30 +34,30 @@ function addInputField(element: HTMLElement, name: string) {
 }
 
 for (let number = 0; number < numberOfMessages; number++) {
-    // <th id="message">
+    // <th id="message0">
     //     Message
     // </th>
-    let messageColumn = createColumn("message")
+    let messageColumn = createColumn("message" + number)
     addText(messageColumn, generateMessage())
 
-    // <th id="label">
+    // <th id="label0">
     //     Related or Unrelated
     // </th>
-    let labelColumn = createColumn("label")
+    let labelColumn = createColumn("label" + number)
     addText(labelColumn, pickRandomFromList(["Related", "Unrelated"]))
 
-    // <th id="tick">
+    // <th id="tick0">
     //     <input type="radio" name="verification0" value="yes">Yes
     // </th>
-    let tickColumn = createColumn("tick")
+    let tickColumn = createColumn("tick" + )
     addRadioButton(tickColumn, "yes", "verification" + number)
     addText(tickColumn, "Yes")
 
-    // <th id="comment">
+    // <th id="comment0">
     //     <input type="radio" name="verification0" value="no"> No, because: 
     //     <input type="text" name="comment0">
     // </th>
-    let commentColumn = createColumn("comment")
+    let commentColumn = createColumn("comment" + number)
     addRadioButton(commentColumn, "no", "verification" + number)
     addText(commentColumn, "No, because: ")
     addInputField(commentColumn, "comment" + number)
