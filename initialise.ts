@@ -5,6 +5,8 @@ function addRow(table: HTMLElement, columns: HTMLElement[]) {
     for (let column of columns) {
         row.appendChild(column)
     }
+
+    table.appendChild(row)
 }
 
 function createColumn(id: string): HTMLElement {
@@ -34,32 +36,33 @@ function addInputField(element: HTMLElement, name: string) {
 }
 
 for (let number = 0; number < numberOfMessages; number++) {
-    // <th id="message">
+    // <th id="message_0">
     //     Message
     // </th>
-    let messageColumn = createColumn("message")
+    let messageColumn = createColumn("message_" + number)
     addText(messageColumn, generateMessage())
 
-    // <th id="label">
+    // <th id="label_0">
     //     Related or Unrelated
     // </th>
-    let labelColumn = createColumn("label")
+    let labelColumn = createColumn("label_" + number)
     addText(labelColumn, pickRandomFromList(["Related", "Unrelated"]))
 
-    // <th id="tick">
-    //     <input type="radio" name="verification" value="yes">Yes
+    // <th id="tick_0">
+    //     <input type="radio" name="verification_0" value="yes">Yes
     // </th>
-    let tickColumn = createColumn("tick")
-    addRadioButton(tickColumn, "yes", "verification")
+    let tickColumn = createColumn("tick_" + )
+    addRadioButton(tickColumn, "yes", "verification_" + number)
     addText(tickColumn, "Yes")
 
-    // <th id="comment">
-    //     <input type="radio" name="verification" value="no">No, because: <input type="text" name="comment">
+    // <th id="comment_0">
+    //     <input type="radio" name="verification_0" value="no"> No, because:
+    //     <input type="text" name="comment_0">
     // </th>
-    let commentColumn = createColumn("comment")
-    addRadioButton(commentColumn, "no", "verification")
+    let commentColumn = createColumn("comment_" + number)
+    addRadioButton(commentColumn, "no", "verification_" + number)
     addText(commentColumn, "No, because: ")
-    addInputField(commentColumn, "comment")
+    addInputField(commentColumn, "comment_" + number)
 
     let table = document.getElementById("table")
     addRow(table, [messageColumn, labelColumn, tickColumn, commentColumn])
