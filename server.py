@@ -11,5 +11,5 @@ def get_request():
     response = Response("response")
     response.headers['Access-Control-Allow-Origin'] = "*"
     return response
-    
+
 app.run(port=8080)
