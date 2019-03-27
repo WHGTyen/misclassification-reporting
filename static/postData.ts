@@ -1,6 +1,21 @@
-function getData(): string {
-    let rowList: Row[] = []
+function getFormResponse(): string {
+    // Returns a JSON string representing an array of Row objects, containing information in the form, e.g.
+    // [
+    //     {
+    //         "message": "This is a message.",
+    //         "inferredLabel": "related",
+    //         "correctlyClassified": true,
+    //         "comment": "This is a comment."
+    //     },
+    //     {
+    //         "message": "This is another message.",
+    //         "inferredLabel": "unrelated",
+    //         "correctlyClassified": false,
+    //         "comment": "This is another comment."
+    //     },
+    // ]
 
+    let rowList: Row[] = []
     for (let rowIndex = 0; rowIndex < numberOfMessages; rowIndex++) {
         let message = document.getElementById("message" + rowIndex).innerText
         let inferredLabel = document.getElementById("label" + rowIndex).innerText
@@ -14,6 +29,7 @@ function getData(): string {
         row.addHumanCheck(isCorrect, comment)
         rowList.push(row)
     }
+
     return JSON.stringify(rowList, null, 4)
 }
 
@@ -44,6 +60,6 @@ function postData(): void {
     let request = new XMLHttpRequest()
     request.open("POST", "http://localhost:8080/post_data")
     request.setRequestHeader("Content-Type", "application/json")
-    request.send(getData())
+    request.send(getFormResponse())
 }
 
