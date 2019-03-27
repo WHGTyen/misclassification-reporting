@@ -9,20 +9,20 @@ class Row {
         this.inferredLabel = inferredLabel
     }
 
-    addHumanCheck(correctlyClassified: boolean, comment?: string) {
+    addHumanCheck(correctlyClassified: boolean, comment?: string) : void {
         this.correctlyClassified = correctlyClassified
         this.comment = comment
     }
 }
 
-function pickRandomLetter(): string {
+function pickRandomLetter() : string {
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
     let letterIndex = Math.floor(Math.random() * alphabet.length)
 
     return alphabet[letterIndex]
 }
 
-function generateWord(minWordLength = 2, maxWordLength = 10): string {
+function generateWord(minWordLength = 2, maxWordLength = 10) : string {
     let word = ""
     let wordLength = Math.floor(Math.random() * (maxWordLength - minWordLength)) + minWordLength
     
@@ -34,7 +34,7 @@ function generateWord(minWordLength = 2, maxWordLength = 10): string {
     return word
 }
 
-function generateMessage(minWordCount = 3, maxWordCount = 20): string {
+function generateMessage(minWordCount = 3, maxWordCount = 20) : string {
     let message = []
     let messageLength = Math.floor(Math.random() * (maxWordCount - minWordCount)) + minWordCount
 
@@ -46,7 +46,7 @@ function generateMessage(minWordCount = 3, maxWordCount = 20): string {
     return message.join(" ")
 }
 
-function pickRandomFromList(possibleItems: any[]): any {
+function pickRandomFromList(possibleItems: any[]) : any {
     let itemIndex = Math.floor(Math.random() * possibleItems.length)
 
     return possibleItems[itemIndex]
