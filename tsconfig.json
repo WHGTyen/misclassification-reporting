@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "outFile": "static/compiledJavaScript.js"
+    },
+    "files": [
+        "static/generateData.ts",
+        "static/initialise.ts",
+        "static/checkInput.ts",
+        "static/postData.ts"
+    ]
+}
