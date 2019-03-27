@@ -38,33 +38,33 @@ function addInputField(element: HTMLElement, name: string, onchange: string) {
 }
 
 for (let number = 0; number < numberOfMessages; number++) {
-    // <th id="message0">
+    // <th id="message_0">
     //     Message
     // </th>
-    let messageColumn = createColumn("message" + number)
+    let messageColumn = createColumn("message_" + number)
     addText(messageColumn, generateMessage())
 
-    // <th id="label0">
+    // <th id="label_0">
     //     Related or Unrelated
     // </th>
-    let labelColumn = createColumn("label" + number)
+    let labelColumn = createColumn("label_" + number)
     addText(labelColumn, pickRandomFromList(["Related", "Unrelated"]))
 
-    // <th id="tick0">
-    //     <input type="radio" name="verification" value="yes" onchange="checkInput(0)">Yes
+    // <th id="tick_0">
+    //     <input type="radio" name="verification_0" value="yes">Yes
     // </th>
-    let tickColumn = createColumn("tick" + number)
-    addRadioButton(tickColumn, "yes", "verification" + number, "checkRowInput(" + number + ")")
+    let tickColumn = createColumn("tick_" + )
+    addRadioButton(tickColumn, "yes", "verification_" + number, "checkRowInput(" + number + ")")
     addText(tickColumn, "Yes")
 
-    // <th id="comment0">
-    //     <input type="radio" name="verification0" value="no" onchange="checkInput(0)"> No, because: 
-    //     <input type="text" name="comment0" onchange="checkInput(0)">
+    // <th id="comment_0">
+    //     <input type="radio" name="verification_0" value="no" onchange="checkInput(0)"> No, because:
+    //     <input type="text" name="comment_0" onchange="checkInput(0)">
     // </th>
-    let commentColumn = createColumn("comment" + number)
-    addRadioButton(commentColumn, "no", "verification" + number, "checkRowInput(" + number + ")")
+    let commentColumn = createColumn("comment_" + number)
+    addRadioButton(commentColumn, "no", "verification_" + number, "checkRowInput(" + number + ")")
     addText(commentColumn, "No, because: ")
-    addInputField(commentColumn, "comment" + number, "checkRowInput(" + number + ")")
+    addInputField(commentColumn, "comment_" + number, "checkRowInput(" + number + ")")
 
     let table = document.getElementById("table")
     addRow(table, [messageColumn, labelColumn, tickColumn, commentColumn])
